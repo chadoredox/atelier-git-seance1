@@ -13,10 +13,7 @@
 
 ## Stratégie de branches choisie : trunk-based
 
-**Décision prise en groupe (étape 1) :** nous utilisons une stratégie **trunk-based** :
-une branche principale unique `main` toujours déployable, sur laquelle tout arrive
-via des **pull requests**, et des branches de travail **courtes et éphémères** créées
-à partir de `main` et rebasées dessus avant merge.
+**Décision prise en groupe (étape 1) :** nous utilisons une stratégie **trunk-based** 
  .
 
 ### Convention de nommage des branches
