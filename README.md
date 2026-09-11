@@ -48,13 +48,3 @@
 └── scripts/             # scripts utilitaires (tests, bisect, etc.)
 ```
 
-## Résumé de l'atelier (Séance 1)
-
-* **Stratégie & Init :** Trunk-based (`feat/*`, `fix/*`), PR obligatoires et commits conventionnels.
-* **Historique propre :** Nettoyage via `git rebase -i` (squash/reword) pour des commits atomiques.
-* **Conflit :** Simulation d'éditions concurrentes sur une même ligne, arbitrage manuel et commit de résolution.
-* **Incident (Cherry-pick & Bisect) :** Report ciblé d'un correctif avec `cherry-pick` et identification du commit fautif via `git bisect`.
-* **Gouvernance :** Rôle des relecteurs automatisé avec `CODEOWNERS` et revues obligatoires.
-* **Protection de branche :** `main` verrouillée (push direct interdit, historique linéaire, protection des tags).
-* **Sécurité :** Hook local `pre-commit` anti-secrets et commits signés GPG (badge *Verified*).
-* **Release :** Versionnage sémantique appliqué et tag annoté `v1.0.0`.
