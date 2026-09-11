@@ -1,4 +1,4 @@
-# Atelier Git avancé & collaboratif — Séance 1
+# Atelier Git
 
 > Bloc DevOps — dépôt de travail du groupe.
 
