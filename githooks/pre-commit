@@ -1,0 +1,30 @@
+#!/bin/sh
+# Hook pre-commit : refuse le commit si un motif de secret evident est detecte.
+# Activation locale : git config core.hooksPath githooks
+
+RED='\033[0;31m'; NC='\033[0m'
+
+# Motifs : cles d'API generiques, AWS, GitHub, Slack, cles privees...
+PATTERNS='(api[_-]?key|apikey|secret|passwd|password|pwd|token|auth)[[:space:]]*[:=][[:space:]]*["'"'"'][A-Za-z0-9_/+=-]{16,}["'"'"']'
+PATTERNS="$PATTERNS|AKIA[0-9A-Z]{16}"
+PATTERNS="$PATTERNS|gh[pousr]_[A-Za-z0-9]{36,}"
+PATTERNS="$PATTERNS|xox[baprs]-[A-Za-z0-9-]{10,}"
+PATTERNS="$PATTERNS|sk_live_[A-Za-z0-9]{16,}"
+PATTERNS="$PATTERNS|-----BEGIN (RSA |EC |OPENSSH )?PRIVATE KEY-----"
+
+FAILED=0
+# On scanne les fichiers stages ; githooks/ est exclu (le hook contient
+# legitiment les motifs qu'il cherche).
+for file in $(git diff --cached --name-only --diff-filter=ACM | grep -v '^githooks/'); do
+    if grep -InE "$PATTERNS" "$file" 2>/dev/null; then
+        echo "${RED}[pre-commit] SECRET DETECTE dans $file - commit refuse.${NC}"
+        FAILED=1
+    fi
+done
+
+if [ "$FAILED" -ne 0 ]; then
+    echo "${RED}[pre-commit] Un secret entre dans l'historique est tres couteux a retirer.${NC}"
+    echo "${RED}[pre-commit] Retirez le secret (contournement d'urgence : git commit --no-verify, a eviter).${NC}"
+    exit 1
+fi
+exit 0

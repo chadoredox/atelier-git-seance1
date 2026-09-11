@@ -8,6 +8,8 @@ def moyenne(notes):
 
 def moyenne_ponderee(notes, coeffs):
     """Calcule la moyenne ponderee d'une liste de notes."""
+    if len(notes) != len(coeffs):
+        raise ValueError("notes et coeffs doivent avoir la meme longueur")
     return sum(n * c for n, c in zip(notes, coeffs))
 
 

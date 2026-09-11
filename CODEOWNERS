@@ -1,0 +1,17 @@
+# Proprietaires par zone du depot (etape 5).
+# Un chemin qui ne correspond a rien ou un username inexistant ne provoque
+# AUCUNE erreur visible : verifier les assignations sur une vraie PR.
+# Par defaut, tout revient au createur du depot.
+*                               @chadoredox
+
+# Code source de l'application
+/src/                           @chadoredox
+
+# Tests
+/tests/                         @Emile943
+
+# Documentation et guide du nouveau membre
+/docs/                          @maXONYAR
+
+# Scripts utilitaires (bisect, hooks, CI)
+/scripts/                       @Louis81515
