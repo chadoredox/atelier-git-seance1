@@ -6,7 +6,7 @@
 
 | Rôle | GitHub | Email |
 |------|--------|-------|
-| Membre 1 (créateur du dépôt) | [@chadoredox](https://github.com/chadoredox) | chadylabib01@gmail.com |
+| Membre 1  | [@chadoredox]
 | Membre 2  tan@et.intechinfo.fr |
 | Membre 3  ceron@et.intechinfo.fr |
 | Membre 4  moussadyk@et.intechinfo.fr |
