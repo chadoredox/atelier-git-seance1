@@ -1,0 +1,37 @@
+# ==== Secrets / environnement — ne jamais committer ====
+.env
+.env.*
+*.pem
+*.key
+secrets.*
+credentials*.json
+config/secrets/
+
+# ==== IDE / éditeurs ====
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# ==== OS ====
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ==== Artefacts de build / dépendances ====
+node_modules/
+dist/
+build/
+out/
+target/
+__pycache__/
+*.pyc
+*.egg-info/
+.venv/
+venv/
+
+# ==== Logs et fichiers temporaires ====
+*.log
+tmp/
+.cache/
