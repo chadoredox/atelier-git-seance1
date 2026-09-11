@@ -17,10 +17,7 @@
 une branche principale unique `main` toujours déployable, sur laquelle tout arrive
 via des **pull requests**, et des branches de travail **courtes et éphémères** créées
 à partir de `main` et rebasées dessus avant merge.
-
-Ce choix a été préféré à Git Flow (branches `develop`/`release` persistantes) car le
-groupe est petit, les itérations sont courtes, et il simplifie l'application de
-l'**historique linéaire** imposé par la protection de branche .
+ .
 
 ### Convention de nommage des branches
 
@@ -40,17 +37,5 @@ l'**historique linéaire** imposé par la protection de branche .
 - Merge en **rebase** (`Rebase and merge`) : l'historique de `main` reste linéaire.
 - Commits conformes aux **Conventional Commits** (`type(scope): description`).
 
-
-## Structure du dépôt
-
-```
-.
-├── README.md            # ce fichier : décisions et documentation de l'atelier
-├── .gitignore           # exclusions (secrets, IDE, OS, artefacts de build)
-├── CODEOWNERS           # propriétaires par zone du dépôt (étape 5)
-├── src/                 # code de l'application
-├── docs/                # documentation du groupe
-└── scripts/             # scripts utilitaires (tests, bisect, etc.)
-```
 
 
