@@ -40,13 +40,6 @@ l'**historique linéaire** imposé par la protection de branche .
 - Merge en **rebase** (`Rebase and merge`) : l'historique de `main` reste linéaire.
 - Commits conformes aux **Conventional Commits** (`type(scope): description`).
 
-### Ouvrir / fermer une PR
-
-1. `git switch -c feature/mon-sujet` depuis `main` à jour.
-2. Travailler, committer (messages conventionnels), `git push -u origin feature/mon-sujet`.
-3. Ouvrir la PR vers `main` : titre `type(scope): ...` + description (quoi, pourquoi).
-4. Revue du Code Owner de la zone touchée (voir `CODEOWNERS`), puis *Rebase and merge*.
-5. Supprimer la branche source.
 
 ## Structure du dépôt
 
