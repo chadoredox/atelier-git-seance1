@@ -14,7 +14,7 @@
 ## Stratégie de branches choisie : trunk-based
 
 **Décision prise en groupe (étape 1) :** nous utilisons une stratégie **trunk-based** 
- .
+
 
 ### Convention de nommage des branches
 
@@ -35,4 +35,26 @@
 - Commits conformes aux **Conventional Commits** (`type(scope): description`).
 
 
+=======
+## Structure du dépôt
 
+```
+.
+├── README.md            # ce fichier : décisions et documentation de l'atelier
+├── .gitignore           # exclusions (secrets, IDE, OS, artefacts de build)
+├── CODEOWNERS           # propriétaires par zone du dépôt (étape 5)
+├── src/                 # code de l'application
+├── docs/                # documentation du groupe
+└── scripts/             # scripts utilitaires (tests, bisect, etc.)
+```
+
+## Résumé de l'atelier (Séance 1)
+
+* **Stratégie & Init :** Trunk-based (`feat/*`, `fix/*`), PR obligatoires et commits conventionnels.
+* **Historique propre :** Nettoyage via `git rebase -i` (squash/reword) pour des commits atomiques.
+* **Conflit :** Simulation d'éditions concurrentes sur une même ligne, arbitrage manuel et commit de résolution.
+* **Incident (Cherry-pick & Bisect) :** Report ciblé d'un correctif avec `cherry-pick` et identification du commit fautif via `git bisect`.
+* **Gouvernance :** Rôle des relecteurs automatisé avec `CODEOWNERS` et revues obligatoires.
+* **Protection de branche :** `main` verrouillée (push direct interdit, historique linéaire, protection des tags).
+* **Sécurité :** Hook local `pre-commit` anti-secrets et commits signés GPG (badge *Verified*).
+* **Release :** Versionnage sémantique appliqué et tag annoté `v1.0.0`.
